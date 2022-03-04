@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome on WeBKreative{% endblock %}
+
+{% block body %}
+    <div class="hero" id="animate-background">
+        <div class="logo">
+            <p>we<span class="B">b</span><span class="K">k</span>reative</p>
+        </div>
+        <div class="image">
+            <img src="{{ asset('images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg') }}" alt="Photo de Kévin Bourisville" class="photo">
+        </div>
+        <div class="wrapper1">
+            <a class="button" href="{{ path('homepage')}}">
+                entrez
+            </a>
+        </div> 
+    </div>
+{% endblock %}
