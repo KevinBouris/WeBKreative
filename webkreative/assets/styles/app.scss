@@ -1,20 +1,80 @@
-@import "custom";
-@import "~bootstrap/scss/bootstrap";
+// @import "custom";
+// @import "~bootstrap/scss/bootstrap";
 
-.background {
-  background: black;
+@font-face {
+  font-family: Horizon;
+  src: url("/home/kevin/Documents/WebKreative entreprise/Portofolio/Fonts/horizon/Horizon.otf") format("opentype");
 }
 
-.petrole {
-  background:
-          radial-gradient(ellipse at 100% 0%, rgba(232,179,168,0.76) 15.44%, rgba(98,81,120,0) 60.66%) 123.04683458805084px -91.68186700344086px / 524.6916259527206px 444.11567783355713px no-repeat no-repeat, /* overlay 6 */
-          radial-gradient(ellipse at 100% 0%, rgba(18,93,108,1) 25.74%, rgba(98,81,120,0) 60.66%) -221.57310593128204px -108.75763058662415px / 973.318502664566px 551.0814312696457px no-repeat no-repeat, /* overlay 5 */
-          radial-gradient(ellipse at 50% 50%, rgba(140,114,172,0.54) 25.74%, rgba(98,81,120,0) 60.66%) -102.0427656173706px 167.55926072597504px / 698.5539392232895px 318.37597930431366px no-repeat no-repeat, /* overlay 4 */
-          radial-gradient(ellipse at 50% 50%, rgba(0,156,156,0.66) 13.97%, rgba(98,81,120,0) 60.66%) -16.663955211639404px 6.115684628486633px / 375.6667870283127px 318.37597930431366px no-repeat no-repeat, /* overlay 3 */
-          radial-gradient(ellipse at 0% 50%, rgba(232,179,168,0.63) 13.97%, rgba(98,81,120,0) 60.66%) -120.67087244987488px 62px / 936.0622820854187px 500px no-repeat no-repeat, /* overlay 2 */
-          radial-gradient(ellipse at 100% 0%, rgba(18,98,114,0.79) 34.56%, rgba(98,81,120,0) 60.66%) 144.77962493896484px -88.57719373703003px / 459.4932564496994px 5512.512659668922px no-repeat no-repeat, /* overlay 1 */
-          linear-gradient(0deg, rgba(0,188,188,1) 0%,  50%, rgba(136,111,169,1) 100%) 0px 0.0000054836273193359375px / 500px 500px no-repeat no-repeat; /* New Background */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 1px 0 3em darkcyan;
+.B {
+  font-family: 'Horizon', serif;
+  text-transform: uppercase;
+}
+
+.K {
+  font-family: 'Horizon', serif;
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0;
+  font-family: 'BioRhyme', serif;
+}
+
+.hero {
+  background: linear-gradient(100deg, white 50%, black 50%);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 50%;
+  text-align: center;
+}
+
+.logo p {
+  display: block;
+  font-size: 8em;
+}
+
+.image {
+  width: 50%;
+  text-align: center;
+  color: white;
+  height: auto;
+  overflow: hidden;
+}
+
+.photo {
+  height: 60vh;
+  align-self: flex-end;
+  border-radius: 100em;
+  filter: hue-rotate(90deg);
+}
+
+.wrapper1 {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper1 a {
+  color: white;
+  text-decoration: none;
+  font-size: xx-large;
+  text-transform: capitalize;
+  border: 1px white solid;
+  padding: 0.3em 1em 0.3em 1em;
+  margin-left: 3em;
+  border-radius: 50px;
+}
+
+.wrapper1 a:hover {
+  background: white;
+  color: black;
 }
