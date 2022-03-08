@@ -22,55 +22,23 @@ body {
 }
 
 .hero {
-  background: linear-gradient(100deg, white 50%, black 50%);
   min-height: 100vh;
   margin: 0;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .logo {
-  width: 50%;
   text-align: center;
+  color: white;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-#background {
-  background-color: yellow;
-  width: 600px; 
-  height: 360px; 
-  margin-bottom: 10px;
-=======
-=======
->>>>>>> f7621c59499e9d65d830e44769c6229a7f230586
 
 .logo p {
   display: block;
-  font-size: 8em;
-}
-
-.image {
-  width: 50%;
-  text-align: center;
-  color: white;
-  height: auto;
-  overflow: hidden;
-}
-
-.photo {
-  height: 60vh;
-  align-self: flex-end;
-  border-radius: 100em;
-  filter: hue-rotate(90deg);
-}
-
-.wrapper1 {
-  width: 200px;
-  display: flex;
-  justify-content: center;
+  font-size: 15em;
+  margin: 0;
 }
 
 .wrapper1 a {
@@ -80,15 +48,10 @@ body {
   text-transform: capitalize;
   border: 1px white solid;
   padding: 0.3em 1em 0.3em 1em;
-  margin-left: 3em;
   border-radius: 50px;
 }
 
 .wrapper1 a:hover {
   background: white;
   color: black;
-<<<<<<< HEAD
->>>>>>> plusieurs test de design
-=======
->>>>>>> f7621c59499e9d65d830e44769c6229a7f230586
 }
