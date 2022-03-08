@@ -55,3 +55,19 @@ body {
   background: white;
   color: black;
 }
+
+.navigation {
+  background-color: black;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-list ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
