@@ -4,11 +4,19 @@
         <meta charset="UTF-8">
         <title>{% block title %}WebKreative Welcome{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        
+        {# Font Awesome #}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
+        {# Fonts #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400;700;800&display=swap" rel="stylesheet">
+        
+        {# Venta.js #}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -18,45 +26,50 @@
             <script>
             window.addEventListener('load', function () {
                 VANTA.NET({
-                el: "#background",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                color: 0x3fffdd,
-                points: 13.00,
-                spacing: 12.00
+                    el: "#ventajs-background",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0x3fffdd,
+                    backgroundColor: 0x0,
+                    points: 10.00,
+                    maxDistance: 45.00,
+                    spacing: 32.00,
+                    showDots: false
                 })
             })
             </script>
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        {# <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid d-flex justify-content-between">
-                <a class="navbar-brand" href="#"><img src="https://source.unsplash.com/random/200x200" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
+    <body id="ventajs-background">
+        {% if app.request.attributes.get('_route') != 'landing_page' %}
+            <nav class="navigation">
+                <div class="">
+                    <a class="" href="#"><img src="https://source.unsplash.com/random/200x200" alt=""></a>
+                    <div>
+                        <ul>
+                            <li>
+                                <a class="" aria-current="page" href="#">About</a>
+                            </li>
+                            <li class="">
+                                <a class="" href="#">Services</a>
+                            </li>
+                            <li class="">
+                                <a class="" href="#">Portofolio</a>
+                            </li>
+                            <li class="">
+                                <a class="" href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav> #}
+            </nav>
+        {% endif %}
         {% block body %}
         {% endblock %}
     </body>
