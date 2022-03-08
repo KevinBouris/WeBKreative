@@ -1,6 +1,6 @@
 # WeBKreative
 
-# Welcome on this project
+## Welcome on this project
 
 This project aims at creating my web developer portfolio, allowing me to validate my hard-skills which are being acquired.
 
