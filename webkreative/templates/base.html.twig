@@ -48,10 +48,11 @@
     </head>
     <body id="ventajs-background">
         {% if app.request.attributes.get('_route') != 'landing_page' %}
+        <header>
             <nav class="navigation">
                 <div class="nav-container">
-                    <a class="nav-logo" href="#">
-                        <p>we<span class="B">b</span><span class="K">k</span>reative</p>
+                    <a class="nav-logo ml-4" href="#">
+                        <img src="{{ asset('assets/img/logo-webkreative-backgroundblack.png') }}" alt="Logo Webkreative" class="header-logo">
                     </a>
                     <div class="nav-list">
                         <ul>
@@ -71,6 +72,7 @@
                     </div>
                 </div>
             </nav>
+        </header>
         {% endif %}
         {% block body %}
         {% endblock %}
