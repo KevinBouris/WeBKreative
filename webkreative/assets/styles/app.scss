@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: Horizon;
-  src: url("/home/kevin/Documents/WebKreative entreprise/Portofolio/Fonts/horizon/Horizon.otf") format("opentype");
+  src: url("/public/assets/fonts/Horizon.otf") format("opentype");
 }
 
 .B {
@@ -19,6 +19,7 @@
 body {
   margin: 0;
   font-family: 'BioRhyme', serif;
+  height: 100vh;
 }
 
 .hero {
