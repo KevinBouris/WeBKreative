@@ -1,24 +1,63 @@
 // @import "custom";
 // @import "~bootstrap/scss/bootstrap";
 
+// ---- KRUB Extralight (200) ----
 @font-face {
-  font-family: Horizon;
-  src: url("/public/assets/fonts/Horizon.otf") format("opentype");
+  font-family: 'Krub';
+  src: url("/public/assets/fonts/krub/Krub-ExtraLight.ttf") format("opentype");
+  font-weight: 200;
 }
-
-.B {
-  font-family: 'Horizon', serif;
-  text-transform: uppercase;
+// ---- KRUB Extralight Italic (200) ----
+@font-face {
+  font-family: 'Krub';
+  src: url("/public/assets/fonts/krub/Krub-ExtraLightItalic.ttf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
 }
-
-.K {
-  font-family: 'Horizon', serif;
-  text-transform: uppercase;
+// ---- KRUB Light (300) ----
+@font-face {
+  font-family: 'Krub';
+  src: url("/public/assets/fonts/krub/Krub-Light.ttf") format("opentype");
+  font-weight: 300;
+}
+// ---- KRUB Light Italic (300) ----
+@font-face {
+  font-family: 'Krub';
+  src: url("/public/assets/fonts/krub/Krub-LightItalic.ttf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+// ---- KRUB Regular (400) ----
+@font-face {
+  font-family: 'Krub';
+  src: url("/public/assets/fonts/krub/Krub-Regular.ttf") format("opentype");
+  font-weight: 400;
+}
+// ---- KRUB Italic (400) ----
+@font-face {
+  font-family: 'Krub';
+  src: url("/public/assets/fonts/krub/Krub-Italic.ttf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+// ---- KRUB SemiBold (600) ----
+@font-face {
+  font-family: 'Krub';
+  src: url("/public/assets/fonts/krub/Krub-SemiBold.ttf") format("opentype");
+  font-weight: 600;
+}
+// ---- KRUB SemiBold Italic (600) ----
+@font-face {
+  font-family: 'Krub';
+  src: url("/public/assets/fonts/krub/Krub-SemiBoldItalic.ttf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
 }
 
 body {
   margin: 0;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Krub', sans-serif;
+  font-weight: 200;
   height: 100vh;
 }
 
@@ -67,13 +106,34 @@ body {
   justify-content: space-between;
 }
 
+.nav-list {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 600;
+}
+
 .nav-list ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #35c7b7;
+}
+
+.nav-home-icon {
+  width: 25px;
 }
 
 .header-logo {
   width: 150px;
-  margin: .5em;
+  margin: .5em .5em .5em 3em;
 }
