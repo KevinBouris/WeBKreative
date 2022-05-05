@@ -47,38 +47,40 @@
         {% endblock %}
     </head>
     <body id="ventajs-background">
-        {% if app.request.attributes.get('_route') != 'landing_page' %}
-        <header>
-            <nav class="navigation">
-                <div class="nav-container">
-                    <a class="nav-logo ml-4" href="#">
+        <div id="page">
+            {% if app.request.attributes.get('_route') != 'landing_page' %}
+            <header>
+                <nav class="navbar">
+                    <a class="nav-logo" href="#">
                         <img src="{{ asset('assets/img/logo-webkreative-backgroundblack.png') }}" alt="Logo Webkreative" class="header-logo">
-                    </a>
-                    
-                        <ul class="nav-list">
-                            <li class="">
-                            <i class="fa-light fa-house nav-home-icon"></i>
-                                <a class="nav-link" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="nav-link" aria-current="page" href="#">About</a>
-                            </li>
-                            <li class="">
-                                <a class="nav-link" href="#">Services</a>
-                            </li>
-                            <li class="">
-                                <a class="nav-link" href="#">Portofolio</a>
-                            </li>
-                            <li class="">
-                                <a class="nav-link" href="#">Blog</a>
-                            </li>
-                        </ul>
-                    
-                </div>
-            </nav>
-        </header>
-        {% endif %}
-        {% block body %}
-        {% endblock %}
+                    </a> 
+                    <ul class="nav-list">
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#">About</a>
+                        </li>
+                        <li class="">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="">
+                            <a class="nav-link" href="#">Portofolio</a>
+                        </li>
+                        <li class="">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            {% endif %}
+
+            <main>
+                {% block body %}{% endblock %}
+            </main>
+
+            {% if app.request.attributes.get('_route') != 'landing_page' %}
+            <footer>
+                <p>&copy;weBKReative</p>
+            </footer>
+            {% endif %}
+        </div>
     </body>
 </html>

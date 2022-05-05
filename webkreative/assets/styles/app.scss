@@ -58,7 +58,13 @@ body {
   margin: 0;
   font-family: 'Krub', sans-serif;
   font-weight: 200;
-  height: 100vh;
+  color: white;
+}
+
+#page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ---- LANDING PAGE CSS --- */
@@ -95,14 +101,13 @@ body {
 }
 /* ---- END LANDING PAGE CSS ---- */
 
-
-.navigation {
+/* ---- HEADER ---- */
+header {
   background-color: black;
 }
 
-.nav-container {
+.navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -117,6 +122,8 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  list-style: none;
 }
 
 .nav-link {
@@ -136,3 +143,18 @@ body {
   width: 150px;
   margin: .5em .5em .5em 3em;
 }
+/* ---- END HEADER ---- */
+
+/* ---- FOOTER ---- */
+footer {
+  background-color: black;
+  height: 200px;
+}
+
+/* ---- END FOOTER ---- */
+
+/* ---- MAIN ---- */
+main {
+  flex-grow: 1;
+}
+/* ---- END MAIN ---- */
