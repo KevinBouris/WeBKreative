@@ -79,7 +79,7 @@ body {
 }
 
 .logo-resize {
-  height: 50em;
+  height: 25rem;
 }
 
 .wrapper1 a {
@@ -87,9 +87,9 @@ body {
   text-decoration: none;
   font-family: 'KRUB';
   font-weight: 400;
-  font-size: 5em;
+  font-size: 2rem;
   text-transform: uppercase;
-  border: 3px white solid;
+  border: 2px white solid;
   padding: 0.3em 1em 0.3em 1em;
   border-radius: 100px;
 }
@@ -104,22 +104,25 @@ body {
 /* ---- HEADER ---- */
 header {
   background-color: black;
+  height: 10rem;
+  position: sticky;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
+  height: 100%;
 }
 
 .nav-list {
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 100%;
   font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
 
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
 
@@ -129,19 +132,37 @@ header {
 .nav-link {
   color: white;
   text-decoration: none;
+  transition: color 0.5s;
 }
 
 .nav-link:hover {
   color: #35c7b7;
+  animation: scale .2s forwards;
 }
 
-.nav-home-icon {
-  width: 25px;
+@keyframes scale {
+  0% { font-size: 1.5rem; }
+  50% { font-size: 1.75rem; }
+  100% { font-size: 2rem; }
+}
+
+.nav-link::after {
+  color: black;
+}
+
+.nav-logo {
+  height: 100%;
+  transition: .5s;
+  margin-left: 3em;
+}
+
+.nav-logo:hover {
+  filter: invert(100%);
 }
 
 .header-logo {
   width: 150px;
-  margin: .5em .5em .5em 3em;
+  height: 100%;
 }
 /* ---- END HEADER ---- */
 

@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>{% block title %}WebKreative Welcome{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         
@@ -51,12 +53,12 @@
             {% if app.request.attributes.get('_route') != 'landing_page' %}
             <header>
                 <nav class="navbar">
-                    <a class="nav-logo" href="#">
+                    <a class="nav-logo" href="{{ path('homepage') }}">
                         <img src="{{ asset('assets/img/logo-webkreative-backgroundblack.png') }}" alt="Logo Webkreative" class="header-logo">
                     </a> 
                     <ul class="nav-list">
                         <li>
-                            <a class="nav-link" aria-current="page" href="#">About</a>
+                            <a class="nav-link" aria-current="page" href="">About</a>
                         </li>
                         <li class="">
                             <a class="nav-link" href="#">Services</a>
