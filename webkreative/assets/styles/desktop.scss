@@ -2,4 +2,27 @@
     .logo-resize {
         height: 30rem;
     }
+
+    .nav-list {
+        width: 50%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        position: inherit;
+    }
+
+    .nav-link:hover {
+        color: #35c7b7;
+        animation: scale .2s forwards;
+    }
+
+    @keyframes scale {
+        0% { font-size: 1.5rem; }
+        50% { font-size: 1.75rem; }
+        100% { font-size: 2rem; }
+    }
+
+    .hamburger {
+        display: none;
+    }
 }
