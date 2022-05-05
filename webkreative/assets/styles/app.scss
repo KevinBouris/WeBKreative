@@ -104,13 +104,14 @@ body {
 /* ---- HEADER ---- */
 header {
   background-color: black;
-  height: 10rem;
+  height: 8rem;
   position: sticky;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 100%;
 }
 
@@ -118,7 +119,7 @@ header {
   width: 50%;
   height: 100%;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
   padding: 0;
 
@@ -146,14 +147,9 @@ header {
   100% { font-size: 2rem; }
 }
 
-.nav-link::after {
-  color: black;
-}
-
 .nav-logo {
-  height: 100%;
   transition: .5s;
-  margin-left: 3em;
+  margin-left: 1em;
 }
 
 .nav-logo:hover {
@@ -161,15 +157,40 @@ header {
 }
 
 .header-logo {
-  width: 150px;
-  height: 100%;
+  width: 120px;
+  height: auto;
 }
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger:first-child {
+  margin-top: 0;
+}
+
+.bar1, .bar2,.bar3 {
+  width: 35px;
+  height: 6px;
+  background-color: white;
+  margin-top: 6px;
+  border-radius: 5px;
+}
+
+.open .bar1, .open .bar2, .open .bar3 {
+  background-color: #35C7B7;
+}
+
 /* ---- END HEADER ---- */
 
 /* ---- FOOTER ---- */
 footer {
   background-color: black;
-  height: 200px;
+  height: 8rem;
 }
 
 /* ---- END FOOTER ---- */
