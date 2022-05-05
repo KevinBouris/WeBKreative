@@ -62,6 +62,7 @@ body {
 }
 
 /* ---- LANDING PAGE CSS --- */
+// IMPORTANT faire affichage tablette et desktop
 .hero {
   min-height: 100vh;
   margin: 0;
@@ -111,12 +112,11 @@ body {
   flex-direction: column;
   justify-content: center;
   font-weight: 600;
-}
 
-.nav-list ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
 .nav-link {
