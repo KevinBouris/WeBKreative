@@ -1,6 +1,6 @@
 // @import "custom";
 // @import "~bootstrap/scss/bootstrap";
-
+//IMPORTANT Modifier Travailler le JS pour que le sticky ne soit qu'après avoir commencer à scroll
 // ---- KRUB Extralight (200) ----
 @font-face {
   font-family: 'Krub';
@@ -68,7 +68,7 @@ body {
 }
 
 /* ---- LANDING PAGE CSS --- */
-// IMPORTANT faire affichage tablette et desktop
+// IMPORTANT faire affichage tablette
 .hero {
   min-height: 100vh;
   margin: 0;
@@ -131,6 +131,7 @@ header {
   background-color: black;
   height: 8rem;
   position: sticky;
+  top: 0;
 }
 
 .navbar {
@@ -252,4 +253,38 @@ footer {
 main {
   flex-grow: 1;
 }
+
+section {
+  height: 50vh;
+}
+
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+  top: -8rem;
+  left: -100%;
+  animation: 4s ease-in-out 1s infinite alternate both slide;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  } to {
+    transform: translateX(100%);
+  }
+}
+
+#about {
+  background-color: black;
+}
+
+
 /* ---- END MAIN ---- */
