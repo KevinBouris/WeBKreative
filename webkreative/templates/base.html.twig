@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>{% block title %}WebKreative Welcome{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         
@@ -33,7 +35,7 @@
                     minHeight: 200.00,
                     minWidth: 200.00,
                     scale: 1.00,
-                    scaleMobile: 1.00,
+                    scaleMobile: 3.00,
                     color: 0x3fffdd,
                     backgroundColor: 0x0,
                     points: 10.00,
@@ -47,30 +49,46 @@
         {% endblock %}
     </head>
     <body id="ventajs-background">
-        {% if app.request.attributes.get('_route') != 'landing_page' %}
-            <nav class="navigation">
-                <div class="">
-                    <a class="" href="#"><img src="https://source.unsplash.com/random/200x200" alt=""></a>
-                    <div>
-                        <ul>
-                            <li>
-                                <a class="" aria-current="page" href="#">About</a>
-                            </li>
-                            <li class="">
-                                <a class="" href="#">Services</a>
-                            </li>
-                            <li class="">
-                                <a class="" href="#">Portofolio</a>
-                            </li>
-                            <li class="">
-                                <a class="" href="#">Blog</a>
-                            </li>
-                        </ul>
+        <div id="page">
+            {% if app.request.attributes.get('_route') != 'landing_page' %}
+            <header>
+                <nav class="navbar">
+                    <a class="nav-logo" href="{{ path('homepage') }}">
+                        <img src="{{ asset('assets/img/logo-webkreative-backgroundblack.png') }}" alt="Logo Webkreative" class="header-logo">
+                    </a> 
+                    <ul class="nav-list" id="nav_list">
+                        <li class="nav-list-border">
+                            <a class="nav-link" aria-current="page" href="">About</a>
+                        </li>
+                        <li class="nav-list-border">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-list-border">
+                            <a class="nav-link" href="#">Portofolio</a>
+                        </li>
+                        <li class="nav-list-border">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                    </ul>
+
+                    <div class="hamburger" data-controller="hamburger" data-action="click->hamburger#click">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
                     </div>
-                </div>
-            </nav>
-        {% endif %}
-        {% block body %}
-        {% endblock %}
+                </nav>
+            </header>
+            {% endif %}
+
+            <main>
+                {% block body %}{% endblock %}
+            </main>
+
+            {% if app.request.attributes.get('_route') != 'landing_page' %}
+            <footer>
+                <p>&copy;weBKReative</p>
+            </footer>
+            {% endif %}
+        </div>
     </body>
 </html>
