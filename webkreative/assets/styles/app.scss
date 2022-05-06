@@ -82,23 +82,48 @@ body {
   height: 25rem;
 }
 
-.wrapper1 a {
-  color: white;
-  text-decoration: none;
-  font-family: 'KRUB';
-  font-weight: 400;
-  font-size: 2rem;
+.svg-wrapper {
+  transform: translateY(-50%);
+  width: 200px;
+}
+.shape1,
+.shape2 {
+  stroke-dasharray: 1120;
+  stroke-width: 3px;
+  fill: transparent;
+  stroke: white;
+  border-bottom: 3px solid black;
+  transition-timing-function: linear;
+  transition: stroke-dashoffset 4s, stroke-dasharray 4s;
+}
+.shape1 {
+  stroke-dashoffset: 1120;
+}
+.shape2 {
+  stroke-dashoffset: -1120;
+}
+.text {
+  font-size: 22px;
+  font-weight: 600;
   text-transform: uppercase;
-  border: 2px white solid;
-  padding: 0.3em 1em 0.3em 1em;
-  border-radius: 100px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+  text-align: center;
 }
 
-// TODO ajouter une transformation pour rendre la modification du background plus douce
-.wrapper1 a:hover {
-  background: white;
-  color: black;
+.text a{
+  text-decoration: none;
+  color: white;
 }
+
+.svg-wrapper:hover .shape1,
+.svg-wrapper:hover .shape2 {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1120;
+}
+
 /* ---- END LANDING PAGE CSS ---- */
 
 /* ---- HEADER ---- */

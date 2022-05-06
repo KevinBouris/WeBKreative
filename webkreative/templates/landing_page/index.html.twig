@@ -7,10 +7,11 @@
         <div class="logo">
             <img src="{{ asset('assets/img/logo-webkreative-whitenobackground.png') }}" alt="Logo Webkreative" class="logo-resize">
         </div>
-        <div class="wrapper1">
-            <a class="button" href="{{ path('homepage')}}">
-                entrez
-            </a>
-        </div> 
-    </div>
+        <div class="svg-wrapper">
+            <svg data-controller='landing-button' data-action='connect->landing-button' height="60" width="200" xmlns="http://www.w3.org/2000/svg">
+                <rect data-controller='landing-button' data-action='connect->landing-button' class="shape1 rec_desktop" height="60" width="200" />
+                <rect data-controller='landing-button' data-action='connect->landing-button' class="shape2 rec_desktop" height="60" width="200" />
+                <div class="text"><a href="{{ path('homepage')}}">entrez</a></div>
+            </svg>
+        </div>
 {% endblock %}
