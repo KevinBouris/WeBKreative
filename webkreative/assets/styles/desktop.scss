@@ -1,4 +1,8 @@
 @media screen and (min-width: 740px) {
+    header {
+        height: 10rem;
+    }
+
     .logo-resize {
         height: 30rem;
     }
@@ -16,10 +20,22 @@
         animation: scale .2s forwards;
     }
 
+    .nav-list-border {
+        margin-top: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+
     @keyframes scale {
         0% { font-size: 1.5rem; }
         50% { font-size: 1.75rem; }
         100% { font-size: 2rem; }
+    }
+
+    .header-logo {
+        width: 10em;
     }
 
     .hamburger {
