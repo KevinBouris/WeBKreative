@@ -73,23 +73,23 @@ $blueColor : #35c7b7;
     /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
-    scrollbar-width: thin;
-    scrollbar-color: #35c7b7 #dedede;
-  }
+        scrollbar-width: thin;
+        scrollbar-color: #35c7b7 #dedede;
+    }
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 7px;
-  }
+        width: 7px;
+    }
 
   *::-webkit-scrollbar-track {
-    background: #050505;
-  }
+        background: #050505;
+    }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #35c7b7;
-    border-radius: 50px;
-    border: 1px ridge #000000;
-  }
+        background-color: #35c7b7;
+        border-radius: 50px;
+        border: 1px ridge #000000;
+    }
     /* ---- END Caroussel Desktop ---- */
 }
