@@ -54,11 +54,19 @@
   font-style: italic;
 }
 
+$h1TitleSize: 3rem;
+$h2TitleSize: 2rem;
+$hLetterSpacing: 5px;
+$textSize : 1.5rem;
+$textLetterSpacing: 3px;
+
+
 body {
   margin: 0;
   font-family: 'Krub', sans-serif;
   font-weight: 200;
   color: white;
+  overflow-x: hidden;
 }
 
 #page {
@@ -144,7 +152,8 @@ header {
 .nav-list {
   height: 100%;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: $textSize;
+  letter-spacing: $textLetterSpacing;
   margin: 0;
   padding: 0;
   
@@ -155,7 +164,7 @@ header {
   top: 8rem;
   width: 100%;
   flex-direction: column;
-  backdrop-filter: blur(.5px);
+  backdrop-filter: blur(.7px);
   background-color: rgba(0, 0, 0, 0.3);
   left:-100%;
   transition: transform ease-out .5s;
@@ -259,28 +268,91 @@ section {
 }
 
 #hero {
+  height: calc(100vh - 8rem);
+}
+
+/* ---- Caroussel ---- */
+.caroussel {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  z-index: -1;
 }
 
-.title {
-  position: relative;
+.slide1,
+.slide2,
+.slide3 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 11.5%;
+  width: 50%;
   text-align: center;
-  font-size: 3rem;
-  top: -8rem;
-  left: -100%;
-  animation: 4s ease-in-out 1s infinite alternate both slide;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+  h2 {
+    margin: 0;
+    font-size: $h2TitleSize;
+    font-weight: 400;
+    letter-spacing: $hLetterSpacing;
+  }
+
+  p {
+    margin: 0;
+    padding: 1em;
+    font-size: $textSize;
+    font-weight: 200;
+    letter-spacing: $textLetterSpacing;
+  }
+
 }
 
-@keyframes slide {
-  from {
-    transform: translateX(-100%);
-  } to {
-    transform: translateX(100%);
+.slide1 {
+  animation-name: anim1;
+
+  h1 {
+    margin: 0;
+    font-size: $h1TitleSize;
+    font-weight: 600;
+    letter-spacing: $hLetterSpacing;
   }
 }
+
+.slide2 {
+  animation-name: anim2;
+}
+
+.slide3 {
+  animation-name: anim3;
+}
+
+@keyframes anim1 {
+  0%, 8.3%{ left: -100%; opacity: 0; }
+  8.3%, 25% { 
+    left: 25%; 
+    opacity: 1; }
+  33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim2 {
+	0%, 33.33% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim3 {
+  0%, 66.66% { left: -100%; opacity: 0; }
+  74.96%, 91.62% { left: 25%; opacity: 1;}
+  100% { left: 110%; opacity: 0;}
+}
+/* ---- END Carousseul ---- */
 
 #about {
   background-color: black;
