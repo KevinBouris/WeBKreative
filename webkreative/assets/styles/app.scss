@@ -1,55 +1,55 @@
 // @import "custom";
 // @import "~bootstrap/scss/bootstrap";
-//IMPORTANT Modifier Travailler le JS pour que le sticky ne soit qu'après avoir commencer à scroll
+// TODO FAIRE RESPONSIVE TABLETTE
 // ---- KRUB Extralight (200) ----
 @font-face {
-  font-family: 'Krub';
-  src: url("/public/assets/fonts/krub/Krub-ExtraLight.ttf") format("opentype");
+  font-family:'Krub';
+  src:url("/public/assets/fonts/krub/Krub-ExtraLight.ttf") format("opentype");
   font-weight: 200;
 }
 // ---- KRUB Extralight Italic (200) ----
 @font-face {
   font-family: 'Krub';
-  src: url("/public/assets/fonts/krub/Krub-ExtraLightItalic.ttf") format("opentype");
+  src:url("/public/assets/fonts/krub/Krub-ExtraLightItalic.ttf") format("opentype");
   font-weight: 200;
   font-style: italic;
 }
 // ---- KRUB Light (300) ----
 @font-face {
   font-family: 'Krub';
-  src: url("/public/assets/fonts/krub/Krub-Light.ttf") format("opentype");
+  src:url("/public/assets/fonts/krub/Krub-Light.ttf") format("opentype");
   font-weight: 300;
 }
 // ---- KRUB Light Italic (300) ----
 @font-face {
   font-family: 'Krub';
-  src: url("/public/assets/fonts/krub/Krub-LightItalic.ttf") format("opentype");
+  src:url("/public/assets/fonts/krub/Krub-LightItalic.ttf") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 // ---- KRUB Regular (400) ----
 @font-face {
-  font-family: 'Krub';
-  src: url("/public/assets/fonts/krub/Krub-Regular.ttf") format("opentype");
+  font-family:'Krub';
+  src:url("/public/assets/fonts/krub/Krub-Regular.ttf") format("opentype");
   font-weight: 400;
 }
 // ---- KRUB Italic (400) ----
 @font-face {
   font-family: 'Krub';
-  src: url("/public/assets/fonts/krub/Krub-Italic.ttf") format("opentype");
+  src:url("/public/assets/fonts/krub/Krub-Italic.ttf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 // ---- KRUB SemiBold (600) ----
 @font-face {
   font-family: 'Krub';
-  src: url("/public/assets/fonts/krub/Krub-SemiBold.ttf") format("opentype");
+  src:url("/public/assets/fonts/krub/Krub-SemiBold.ttf") format("opentype");
   font-weight: 600;
 }
 // ---- KRUB SemiBold Italic (600) ----
 @font-face {
   font-family: 'Krub';
-  src: url("/public/assets/fonts/krub/Krub-SemiBoldItalic.ttf") format("opentype");
+  src:url("/public/assets/fonts/krub/Krub-SemiBoldItalic.ttf") format("opentype");
   font-weight: 600;
   font-style: italic;
 }
@@ -59,6 +59,7 @@ $h2TitleSize: 2rem;
 $hLetterSpacing: 5px;
 $textSize : 1.5rem;
 $textLetterSpacing: 3px;
+$blueColor: #35C7B7;
 
 
 body {
@@ -190,7 +191,7 @@ header {
 }
 
 .nav-link:hover {
-  color: #35c7b7;
+  color: $blueColor;
 }
 
 
@@ -235,7 +236,7 @@ header {
 .open .bar1,
 .open .bar2,
 .open .bar3 {
-  background-color: #35C7B7;
+  background-color: $blueColor;
 }
 
 .open .bar1 {
@@ -278,6 +279,54 @@ section {
   height: 100vh;
   width: 100vw;
 }
+
+.scrollDown {
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  top: calc(100vh - 8rem);
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  color: white;
+  border: .5px solid white;
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  
+  &:hover {
+    border: 1px solid $blueColor;
+    color: $blueColor;
+  }
+
+  @media screen and (max-width: 740px) {
+    &:visited {
+      border-color: white;
+      color: white;
+    }
+  }
+  
+  i {
+    position: relative;
+    animation: scroll 2.5s ease-in-out infinite;
+    
+    &:hover {
+      animation-play-state: paused;
+      opacity: 1;
+    }
+  }
+}
+
+
+@keyframes scroll {
+  0% { transform: translateY(-250%); }
+  50% { transform: translateY(0%); }
+  100% { opacity: 0; }
+}
+
+
 
 .slide1,
 .slide2,
