@@ -310,7 +310,7 @@ section {
   
   i {
     position: relative;
-    animation: scroll 2.5s ease-in-out infinite;
+    animation: scroll 3s ease-out infinite;
     
     &:hover {
       animation-play-state: paused;
