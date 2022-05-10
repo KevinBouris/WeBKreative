@@ -1,3 +1,8 @@
+$h1TitleSize: 6rem;
+$h2TitleSize: 4rem;
+$textSize : 1.5rem;
+$blueColor : #35c7b7;
+
 @media screen and (min-width: 740px) {
     header {
         height: 10rem;
@@ -20,7 +25,7 @@
     }
 
     .nav-link:hover {
-        color: #35c7b7;
+        color: $blueColor;
         animation: scale .2s forwards;
     }
 
@@ -44,5 +49,47 @@
 
     .hamburger {
         display: none;
+    }
+
+    /* ---- BEGIN Caroussel Desktop ---- */
+    .slide1,
+    .slide2,
+    .slide3 {
+        h2 {
+            font-size: $h2TitleSize;
+        }
+
+        p {
+            font-size: $textSize;
+        }
+    } 
+    
+    .slide1 {
+        h1 {
+            font-size: $h1TitleSize;
+        }
+    }
+    /* ---- END Caroussel Desktop ---- */
+
+    /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+        scrollbar-width: thin;
+        scrollbar-color: #35c7b7 #dedede;
+    }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+        width: 7px;
+    }
+
+  *::-webkit-scrollbar-track {
+        background: #050505;
+    }
+
+  *::-webkit-scrollbar-thumb {
+        background-color: #35c7b7;
+        border-radius: 50px;
+        border: 1px ridge #000000;
     }
 }
