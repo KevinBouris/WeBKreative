@@ -57,9 +57,11 @@
 $h1TitleSize: 3rem;
 $h2TitleSize: 2rem;
 $hLetterSpacing: 5px;
-$textSize : 1.5rem;
+$textSize : 1rem;
 $textLetterSpacing: 3px;
 $blueColor: #35C7B7;
+$lineHeight: 1.7em;
+$linerGradient: linear-gradient(to left top, #000000, #060406, #09090e, #090e13, #071316, #071719, #081b1b, #0a1f1c, #082420, #062924, #032f28, #00342c);
 
 
 body {
@@ -68,6 +70,15 @@ body {
   font-weight: 200;
   color: white;
   overflow-x: hidden;
+  letter-spacing: $textLetterSpacing;
+}
+
+h2 {
+  font-size: $h2TitleSize;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 2em;
+  letter-spacing: $hLetterSpacing;
 }
 
 #page {
@@ -398,8 +409,91 @@ section {
 }
 /* ---- END Carousseul ---- */
 
+  /* ---- BEGIN service section ---- */
+#services {
+  // background-color: black;
+  width: 100vw;
+  height: auto;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2em;
+  
+
+
+  p {
+    font-size: $textSize;
+    font-weight: 200;
+    text-align: center;
+    padding: 1em;
+    text-shadow: white .5px .5px .7px;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    span {
+      font-weight: 600;
+      color: $blueColor;
+      text-shadow: $blueColor .5px .5px .7px;
+    }
+  }
+}
+
+.service--glass {
+  width: 80vw;
+  margin-top: 1em;
+  background-color: rgba (255, 255, 255, .15);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+
+  li:first-child {
+    margin-top: 0;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+
+    font-size: $textSize;
+  }
+
+  li > i {
+    font-size: 60px;
+    margin-top: 1em;
+  }
+}
+  /* ---- END service section ---- */
+
+
+
 #about {
-  background-color: black;
+  background-image: $linerGradient;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 2em;
+
+  line-height: $lineHeight;
+  font-size: $textSize;
+  letter-spacing: $textLetterSpacing;
+  
 }
 
 
