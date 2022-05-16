@@ -129,9 +129,9 @@ $blueColor: #35c7b7;
             // margin-top: 3em;
         }
 
-        // .service--glass {
-        //     // margin-top: 5em;
-        // }
+        h3:after {
+            left: 165px;
+        }
 
         .service-list {
             flex-direction: row;
