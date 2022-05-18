@@ -112,7 +112,32 @@ $blueColor: #35c7b7;
         h3::after {
             left: 170px; 
         }
+
+        // BUG animation don't work on button
+        .about-container {
+            flex-direction: row !important;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            .about-left {
+                width: 40%;
+            }
+
+            .about-right {
+                width: 60%;
+                order: 0;
+            }
+
+            .btn-holder {
+                order: 1;
+            }
+        }
     }
+
+    
+
+
 /* ---- END About ---- */
 
 /* ---- BEGIN Service ----*/
