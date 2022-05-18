@@ -497,7 +497,9 @@ section {
   align-items: center;
   line-height: 2em;
   
-
+  h3::after {
+    left: 140px;
+  }
 
   p {
     font-size: $textSize;
@@ -568,10 +570,63 @@ section {
   width: 100vw;
   height: auto;
 
+  .about-image {
+    width: 65%;
+    clip-path: ellipse(50% 35%);
+  }
+
+  
+  .about-container {
+    display: flex;
+    flex-direction: column;
+
+    .about-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .about-right {
+      order: 1;
+    }
+    
+    .btn-holder {
+      text-align: center;
+      margin-bottom: 1em;
+      margin-top: 0;
+    }
+
+    .more-btn--text:visited {
+      color: white;
+    }
+  }
+
+  .about-right > p {
+    margin-top: 2em;
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      border-bottom: white .1px dashed;
+      color: white;
+    }
+
+    a:visited {
+      color: $blueColor;
+      border-color: $blueColor;
+    }
+  }
+
+  .about-right p > span {
+    font-weight: 700;
+    color: $blueColor;
+  }
 }
 
+
 .about > h3::after {
-  left: 135px;
+  left: 140px;
   top: 1.15em;
 }
 .about {
@@ -587,7 +642,6 @@ section {
   line-height: $lineHeight;
   font-size: $textSize;
   letter-spacing: $textLetterSpacing;
-  
 }
 
 

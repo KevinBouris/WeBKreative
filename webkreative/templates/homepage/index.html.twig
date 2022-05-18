@@ -23,7 +23,20 @@
     <section id='about'>
         <div class="about">
             <h3>a propos</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptates recusandae dolorem suscipit deleniti doloribus quibusdam ratione rem deserunt, cumque et impedit velit fugiat saepe ex quos, atque illo debitis soluta, praesentium ipsa? Unde ea maxime ipsa, nam explicabo a quam earum at ratione esse ullam doloremque, natus molestias fugiat? Aliquam nemo ratione eos laudantium quisquam ut minima, sed unde dolor, sit ab. Ipsam consectetur cumque voluptates repellat provident, hic eum error sint sapiente labore! Esse expedita corrupti labore delectus rerum? Nesciunt beatae, nemo quo consectetur, assumenda dignissimos porro deleniti cumque provident, ipsum doloribus nihil numquam magnam aliquid enim veniam nulla dolorum vel. Consequuntur fugit reprehenderit itaque nobis nihil, odit dolorem. Autem, quis. At suscipit quia qui. Vitae, blanditiis neque.</p>
+            <div class="about-container">
+                <div class="about-left">
+                    <img src="{{ asset('assets/img/upload/kevin-bourisville-profile.jpg') }}" alt="" class="about-image">
+                </div>
+                <div class="about-right">
+                    <p>Bonjour ! Je m'appel <span>{{ kebouInfo.Firstname ~ ' ' ~ kebouInfo.lastname }}</span>, développeur Web depuis {{ kebouInfo.yearExperience }} an. </p>
+                    <p>Après une première vie en tant que paysagiste, qui m'a permis d'obtenir des compétences telles que l'organisation, l'écoute, le conseil j'ai décidé d'effectuer une reconversion professionnel dans une domaine qui me passionner depuis de nombreuses années.</p>
+                    <p>J'ai donc suivis la formation proposé par la très bonne école <a href="https://oclock.io/" target="_blank" rel="noopener" aria-label="oclock (nouvelle fenetre)">O'Clock <i class="fa-solid fa-arrow-up-right-from-square"></i></a> qui m'a permis d'accéder au Titre Professionnel de niveau III en tant que <span>Développeur Web et Web mobile</span>. Suite à l'obtention de ce diplôme équivalent au Bac+2, j'ai pu effectuer différentes missions que vous pourrez retrouver dans <a href="{{ asset('assets/pdf/cv-kevin-bourisville.pdf') }}" download> mon CV</a> en pdf et dans la partie <a href="#portefolio"> projets</a> de ce site.</p>
+                    <p>Bonne visite à vous !</p>
+                </div>
+                <div class="btn-holder" id="btn">
+                    <a href="{{ asset('assets/pdf/cv-kevin-bourisville.pdf') }}" download class="more-btn--text">Télécharger mon CV</a>
+                </div>
+            </div>
         </div>
     </section>
     <section id='services'>
