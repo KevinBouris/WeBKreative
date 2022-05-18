@@ -568,10 +568,48 @@ section {
   width: 100vw;
   height: auto;
 
+  .about-image {
+    width: 65%;
+    clip-path: ellipse(50% 35%);
+  }
+
+  .about-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 1.5em;
+
+    .more-btn--text:visited {
+      color: white;
+    }
+  }
+
+  .about-right > p {
+    margin-top: 2em;
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      border-bottom: white .1px dashed;
+      color: white;
+    }
+
+    a:visited {
+      color: $blueColor;
+      border-color: $blueColor;
+    }
+  }
+
+  .about-right p > span {
+    font-weight: 700;
+    color: $blueColor;
+  }
 }
 
+
 .about > h3::after {
-  left: 135px;
+  left: 140px;
   top: 1.15em;
 }
 .about {
@@ -587,7 +625,6 @@ section {
   line-height: $lineHeight;
   font-size: $textSize;
   letter-spacing: $textLetterSpacing;
-  
 }
 
 

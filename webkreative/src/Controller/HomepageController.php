@@ -12,10 +12,10 @@ class HomepageController extends AbstractController
     #[Route('/accueil', name: 'homepage')]
     public function index(UserRepository $user): Response
     {
-        dd($user->findAll());
+        $kebou = $user->findOneByEmail('web.kreative.34@gmail.com');
 
         return $this->render('homepage/index.html.twig', [
-            'controller_name' => 'HomepageController',
+            'kebouInfo' => $kebou,
         ]);
     }
 }
