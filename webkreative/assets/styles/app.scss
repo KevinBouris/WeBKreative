@@ -497,7 +497,9 @@ section {
   align-items: center;
   line-height: 2em;
   
-
+  h3::after {
+    left: 140px;
+  }
 
   p {
     font-size: $textSize;
