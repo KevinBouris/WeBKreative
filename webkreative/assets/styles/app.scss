@@ -56,9 +56,10 @@
 
 $h1TitleSize: 3rem;
 $h2TitleSize: 2rem;
+$h4TitleSize: 1rem;
 $hLetterSpacing: 5px;
 $textSize : 1rem;
-$textLetterSpacing: 3px;
+$textLetterSpacing: 2px;
 $blueColor: #35C7B7;
 $lineHeight: 1.7em;
 $linerGradient: linear-gradient(to left top, #000000, #060406, #09090e, #090e13, #071316, #071719, #081b1b, #0a1f1c, #082420, #062924, #032f28, #00342c);
@@ -68,10 +69,12 @@ $h2Color: #FFDB98;
 body {
   margin: 0;
   font-family: 'Krub', sans-serif;
+  font-size: .8rem;
   font-weight: 200;
   color: white;
   overflow-x: hidden;
   letter-spacing: $textLetterSpacing;
+  line-height: $lineHeight;
   box-sizing: border-box;
 }
 
@@ -107,7 +110,9 @@ h3 {
   }
 }
 
-
+h4 {
+  font-size: $h4TitleSize;
+}
 
 /* ---- BEGIN Btn component ---- */
 #btn {
@@ -118,7 +123,6 @@ h3 {
   color: white;
   position: relative;
   overflow: hidden;
-  font-size: $textSize;
   letter-spacing: $textLetterSpacing;
   text-transform: capitalize;
   transition: all 1s;
@@ -146,7 +150,6 @@ h3 {
   
   .more-btn--text{
     text-decoration: none;
-    font-size: $textSize;
     font-weight: 400;
 
   }
@@ -281,7 +284,6 @@ header {
   color: $blueColor;
 }
 
-
 .nav-logo {
   transition: .5s;
   margin-left: 1em;
@@ -350,10 +352,6 @@ footer {
 /* ---- MAIN ---- */
 main {
   flex-grow: 1;
-}
-
-section {
-  height: 50vh;
 }
 
 #hero {
@@ -439,7 +437,6 @@ section {
   p {
     margin: 0;
     padding: 1em;
-    font-size: $textSize;
     font-weight: 200;
     letter-spacing: $textLetterSpacing;
   }
@@ -486,7 +483,6 @@ section {
 
 /* ---- BEGIN service ---- */
 #services {
-  // background-color: black;
   width: 100vw;
   height: auto;
 }
@@ -503,11 +499,10 @@ section {
   }
 
   p {
-    font-size: $textSize;
     font-weight: 200;
-    text-align: center;
+    text-align: left;
     padding: 1em;
-    text-shadow: white .5px .5px .7px;
+    // text-shadow: white .5px .5px .7px;
     margin-bottom: 0;
     margin-top: 0;
 
@@ -544,8 +539,6 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 2em;
-
-    font-size: $textSize;
   }
 
   .service--link {
@@ -638,10 +631,6 @@ section {
   align-items: center;
   height: auto;
   padding: 2em;
-
-  line-height: $lineHeight;
-  font-size: $textSize;
-  letter-spacing: $textLetterSpacing;
 }
 
 /* ---- END About ---- */
@@ -659,13 +648,13 @@ section {
     align-items: center;
 
     h3:before {
-      top: 6px;
+      top: -3px;
       left: -7px;
     }
 
     h3::after {
-      left: 204px;
-      bottom: 4px;
+      left: 198px;
+      bottom: -2px;
     }
 
     .portefolio-galery {
@@ -706,9 +695,11 @@ section {
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+          
 
           h4 {
             align-self: center;
+            text-transform: capitalize;
           }
         }
       }
