@@ -36,9 +36,13 @@ class Project
     #[ORM\ManyToMany(targetEntity: Language::class, inversedBy: 'projects')]
     private $languages;
 
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'projects')]
+    private $tags;
+
     public function __construct()
     {
         $this->languages = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -138,6 +142,30 @@ class Project
     public function removeLanguage(Language $language): self
     {
         $this->languages->removeElement($language);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        $this->tags->removeElement($tag);
 
         return $this;
     }
