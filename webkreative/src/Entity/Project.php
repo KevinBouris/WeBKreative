@@ -39,6 +39,12 @@ class Project
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'projects')]
     private $tags;
 
+    #[ORM\Column(type: 'text')]
+    private $shortDescription;
+
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $description;
+
     public function __construct()
     {
         $this->languages = new ArrayCollection();
@@ -166,6 +172,30 @@ class Project
     public function removeTag(Tag $tag): self
     {
         $this->tags->removeElement($tag);
+
+        return $this;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
+    }
+
+    public function setShortDescription(string $shortDescription): self
+    {
+        $this->shortDescription = $shortDescription;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
