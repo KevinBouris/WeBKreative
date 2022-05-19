@@ -72,6 +72,7 @@ body {
   color: white;
   overflow-x: hidden;
   letter-spacing: $textLetterSpacing;
+  box-sizing: border-box;
 }
 
 h3 {
@@ -483,7 +484,7 @@ section {
 }
 /* ---- END Carousseul ---- */
 
-  /* ---- BEGIN service section ---- */
+/* ---- BEGIN service ---- */
 #services {
   // background-color: black;
   width: 100vw;
@@ -521,7 +522,7 @@ section {
 .service--glass {
   width: 80vw;
   margin-top: 1em;
-  background-color: rgba (255, 255, 255, .15);
+  background-color: rgba(255, 255, 255, .15);
   backdrop-filter: blur(8px);
   border-radius: 20px;
 }
@@ -562,7 +563,7 @@ section {
     margin-top: 1em;
   }
 }
-  /* ---- END service section ---- */
+/* ---- END service ---- */
 
 /* ---- BEGIN About ---- */
 
@@ -624,7 +625,6 @@ section {
   }
 }
 
-
 .about > h3::after {
   left: 140px;
   top: 1.15em;
@@ -644,5 +644,79 @@ section {
   letter-spacing: $textLetterSpacing;
 }
 
+/* ---- END About ---- */
+
+/* ---- BEGIN Portefolio ---- */
+#portefolio {
+  background: $linerGradient;
+  width: 100vw;
+  height: auto;
+  margin-top: 2em;
+
+  .portefolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3:before {
+      top: 6px;
+      left: -7px;
+    }
+
+    h3::after {
+      left: 204px;
+      bottom: 4px;
+    }
+
+    .portefolio-galery {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: space-between;
+
+      .portefolio-glass {
+        width: 80vw;
+        padding: .5em .5em 0 .5em;
+
+        height: auto;
+        margin-bottom: 2em;
+
+        background-color: rgba(255, 255, 255, .15);
+        backdrop-filter: blur(8px);
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        img {
+          border-radius: 15px 15px 0 0;
+          object-fit: cover;
+        }
+
+        .portefolio-design-row {
+          height: .5px;
+          width: 30%;
+          background-color: $blueColor;
+          align-self: center;
+          margin-top: 1em;
+        }
+
+        .portefolio-card-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          h4 {
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ---- END Portefolio ---- */
 
 /* ---- END MAIN ---- */
