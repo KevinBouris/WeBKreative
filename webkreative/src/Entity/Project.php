@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
@@ -30,6 +32,14 @@ class Project
 
     #[ORM\Column(type: 'boolean')]
     private $devStatus;
+
+    #[ORM\ManyToMany(targetEntity: Language::class, inversedBy: 'projects')]
+    private $languages;
+
+    public function __construct()
+    {
+        $this->languages = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +114,30 @@ class Project
     public function setDevStatus(bool $devStatus): self
     {
         $this->devStatus = $devStatus;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Language[]
+     */
+    public function getLanguages(): Collection
+    {
+        return $this->languages;
+    }
+
+    public function addLanguage(Language $language): self
+    {
+        if (!$this->languages->contains($language)) {
+            $this->languages[] = $language;
+        }
+
+        return $this;
+    }
+
+    public function removeLanguage(Language $language): self
+    {
+        $this->languages->removeElement($language);
 
         return $this;
     }
