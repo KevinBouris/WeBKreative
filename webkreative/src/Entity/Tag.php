@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\TagRepository;
+use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TagRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Tag
 {
     #[ORM\Id]
@@ -33,6 +35,18 @@ class Tag
     public function __construct()
     {
         $this->projects = new ArrayCollection();
+    }
+
+    #[ORM\PrePersist]
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new DateTimeImmutable("now");
+    }
+
+    #[ORM\PreUpdate]
+    public function setUpdatedAtValue()
+    {
+        $this->updatedAt = new DateTimeImmutable("now");
     }
 
     public function getId(): ?int
