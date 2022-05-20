@@ -85,7 +85,19 @@
                         <div class="portefolio-card-info">
                             <h4>{{ project.name }}</h4>
                             <p class="portefolio-card-text">{{ project.shortDescription }}</p>
-                            <div class="portefolio-card-tag"></div>
+                            <div class="portefolio-card-tag">
+                                {% for language in project.languages %}
+                                    <div class="portefolio-logo {{ language.cssClass }}">
+                                        <img src="{{ asset('assets/img/logo/' ~ language.logoPath) }}" alt="Logo {{ language.name }}" class="">    
+                                        <p>{{ language.name }}</p>
+                                    </div>
+                                {% endfor %}
+                                {% for tag in project.tag %}
+                                    <div class="portefolio-tag {{ tag.cssClass }}">
+                                        <p>{{ tag.name }}</p>
+                                    </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 {% endfor %}

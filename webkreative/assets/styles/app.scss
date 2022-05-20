@@ -1,5 +1,5 @@
-// @import "custom";
-// @import "~bootstrap/scss/bootstrap";
+@import "tags";
+
 // TODO FAIRE RESPONSIVE TABLETTE
 // ---- KRUB Extralight (200) ----
 @font-face {
@@ -114,6 +114,13 @@ h4 {
   font-size: $h4TitleSize;
 }
 
+#page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
 /* ---- BEGIN Btn component ---- */
 #btn {
   margin-top: 2em;
@@ -161,12 +168,6 @@ h4 {
 }
 /* ----- END Btn component ---- */
   
-#page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
 
 /* ---- LANDING PAGE CSS --- */
 // IMPORTANT faire affichage tablette
@@ -187,6 +188,7 @@ h4 {
   transform: translateY(-50%);
   width: 200px;
 }
+
 .shape1,
 .shape2 {
   stroke-dasharray: 1120;
@@ -197,12 +199,15 @@ h4 {
   transition-timing-function: linear;
   transition: stroke-dashoffset 4s, stroke-dasharray 4s;
 }
+
 .shape1 {
   stroke-dashoffset: 1120;
 }
+
 .shape2 {
   stroke-dashoffset: -1120;
 }
+
 .text {
   font-size: 22px;
   font-weight: 600;
@@ -332,23 +337,17 @@ header {
 .open .bar1 {
   transform: translateY(200%) rotate(-45deg);
 }
+
 .open .bar3 {
   transform: translateY(-200%) rotate(45deg);
 }
+
 .open .bar2 {
   transform: rotate(45deg);
   opacity: 100%;
 }
 
 /* ---- END HEADER ---- */
-
-/* ---- FOOTER ---- */
-footer {
-  background-color: black;
-  height: 8rem;
-}
-
-/* ---- END FOOTER ---- */
 
 /* ---- MAIN ---- */
 main {
@@ -707,6 +706,36 @@ main {
             font-weight: 400;
             font-style: italic;
           }
+
+          .portefolio-card-tag {
+            display: flex;
+            align-items: center;
+
+            .portefolio-logo {
+              width: auto;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              border-radius: 25px;
+              margin: .5em .5em .5em 0;
+              padding: .5em;
+
+              img {
+                width: 15px;
+                margin-right: 5px;
+              }
+
+              & > p {
+                font-size: .5rem;
+                margin: 0 0 0 0;
+                font-weight: 700;
+                font-style: italic;
+              }
+            }
+
+            
+          }
         }
       }
     }
@@ -715,5 +744,12 @@ main {
 
 
 /* ---- END Portefolio ---- */
+
+/* ---- FOOTER ---- */
+footer {
+  background-color: black;
+  height: 8rem;
+}
+/* ---- END FOOTER ---- */
 
 /* ---- END MAIN ---- */
