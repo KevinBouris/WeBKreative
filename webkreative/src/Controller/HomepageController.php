@@ -17,7 +17,7 @@ class HomepageController extends AbstractController
     ): Response
     {
         $kebou = $user->findOneByEmail('web.kreative.34@gmail.com');
-        $projects = $projectRepository->findAll();
+        $projects = $projectRepository->findLastFiveProject();
 
         return $this->render('homepage/index.html.twig', [
             'kebouInfo' => $kebou,

@@ -19,6 +19,20 @@ class ProjectRepository extends ServiceEntityRepository
         parent::__construct($registry, Project::class);
     }
 
+    /**
+     * Find last five project for display on homepage
+     * @return Project[] Return an array with last five Project objects
+     */
+    public function findLastFiveProject()
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.createdAt', 'DESC')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
     // /**
     //  * @return Project[] Returns an array of Project objects
     //  */
