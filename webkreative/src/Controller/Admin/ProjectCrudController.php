@@ -34,7 +34,10 @@ class ProjectCrudController extends AbstractCrudController
             DateField::new('created_at')->onlyOnIndex(),
             AssociationField::new('languages', 'Langages')
                 ->setFormTypeOption('choice_label', 'name')
-                ->setFormTypeOption('by_reference', false)
+                ->setFormTypeOption('by_reference', false),
+            AssociationField::new('tag')
+                ->setFormTypeOption('choice_label', 'name')
+                ->setFormTypeOption('by_reference', false),
         ];
     }
 }
