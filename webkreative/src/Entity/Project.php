@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Project
 {
     #[ORM\Id]
@@ -55,6 +57,18 @@ class Project
     {
         $this->languages = new ArrayCollection();
         $this->tags = new ArrayCollection();
+    }
+
+    #[ORM\PrePersist]
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new DateTimeImmutable("now");
+    }
+
+    #[ORM\PreUpdate]
+    public function setUpdatedAtValue()
+    {
+        $this->updatedAt = new DateTimeImmutable("now");
     }
 
     public function getId(): ?int

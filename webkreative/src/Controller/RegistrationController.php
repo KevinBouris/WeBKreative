@@ -1,5 +1,5 @@
 <?php
-
+// IMPORTANT Supprimer tout ce qui permet de s'enregistrer en tant qu'Admin 
 namespace App\Controller;
 
 use App\Entity\User;
