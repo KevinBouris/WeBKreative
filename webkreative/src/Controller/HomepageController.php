@@ -16,12 +16,10 @@ class HomepageController extends AbstractController
         UserRepository $user
     ): Response
     {
-        $kebou = $user->findOneByEmail('web.kreative.34@gmail.com');
-        $projects = $projectRepository->findLastFiveProject();
 
         return $this->render('homepage/index.html.twig', [
-            'kebouInfo' => $kebou,
-            'projects' => $projects,
+            'kebouInfo' => $user->findOneByEmail('web.kreative.34@gmail.com'),
+            'projects' => $projectRepository->findLastFiveProject(),
         ]);
     }
 }
