@@ -23,7 +23,9 @@ class LanguageCrudController extends AbstractCrudController
         return [
             IdField::new('id')->onlyOnIndex(),
             TextField::new('name'),
-            ImageField::new('logoPath')->onlyOnForms()->setUploadDir('public/assets/img/logo/'),
+            ImageField::new('logoPath')
+                ->setUploadDir('public/assets/img/logo/')
+                ->onlyOnForms(),
             TextField::new('css_class')->onlyOnForms(),
             DateTimeField::new('created_at')->onlyOnIndex(),
             DateTimeField::new('updated_at')->onlyOnIndex(),

@@ -87,12 +87,12 @@
                             <p class="portefolio-card-text">{{ project.shortDescription }}</p>
                             <div class="portefolio-card-tag">
                                 {% for language in project.languages %}
-                                    <div class="portefolio-logo {{ language.cssClass }}">
+                                    <div class="portefolio-tag {{ language.cssClass }}">
                                         <img src="{{ asset('assets/img/logo/' ~ language.logoPath) }}" alt="Logo {{ language.name }}" class="">    
                                         <p>{{ language.name }}</p>
                                     </div>
                                 {% endfor %}
-                                {% for tag in project.tag %}
+                                {% for tag in project.tags %}
                                     <div class="portefolio-tag {{ tag.cssClass }}">
                                         <p>{{ tag.name }}</p>
                                     </div>
