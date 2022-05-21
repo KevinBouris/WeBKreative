@@ -108,11 +108,12 @@ $blueColor: #35c7b7;
         border-radius: 15px;
 
         h3::before {
-            top: -3px;
+            top: -4px;
         }
 
         h3::after {
-            left: 170px; 
+            left: 170px;
+            top: 40px 
         }
 
         // BUG animation don't work on button
@@ -151,8 +152,13 @@ $blueColor: #35c7b7;
             // margin-top: 3em;
         }
 
+        h3::before {
+            top: -4px
+        }
+
         h3:after {
             left: 165px;
+            bottom: -4px;
         }
 
         .service--glass {
@@ -177,7 +183,7 @@ $blueColor: #35c7b7;
         .portefolio {
             width: 100%;
             h3::before {
-                top: -7px;
+                top: -4px;
             }
 
             h3::after {
