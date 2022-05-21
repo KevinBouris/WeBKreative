@@ -61,7 +61,7 @@ $hLetterSpacing: 5px;
 $textSize : 1rem;
 $textLetterSpacing: 2px;
 $blueColor: #35C7B7;
-$lineHeight: 1.7em;
+$lineHeight: 1.9em;
 $linerGradient: linear-gradient(to left top, #000000, #060406, #09090e, #090e13, #071316, #071719, #081b1b, #0a1f1c, #082420, #062924, #032f28, #00342c);
 $h2Color: #FFDB98;
 
@@ -492,7 +492,6 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  line-height: 2em;
   
   h3::after {
     left: 140px;
