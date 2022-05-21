@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\User;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use SebastianBergmann\Diff\Diff;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
@@ -17,6 +19,7 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
  */
 class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
+    
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
@@ -34,6 +37,24 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $user->setPassword($newHashedPassword);
         $this->_em->persist($user);
         $this->_em->flush();
+    }
+
+    public function incrementYearExperience()
+    {
+        $users = $this->findAll();
+        $dateOfTheDay = new DateTime('now');
+
+        foreach($users as $user) {     
+            $diff = $user->getYearExperienceDate()->diff($dateOfTheDay);
+
+            if ($diff->format('%y') == 1) {
+                $userExperience = $user->getYearExperience();
+                $user->setYearExperience($userExperience + 1);
+                $user->setYearExperienceDate(new DateTime('now'));
+                $this->_em->persist($user);
+                $this->_em->flush();
+            }
+        }
     }
 
     // /**
