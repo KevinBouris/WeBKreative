@@ -71,6 +71,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'datetime', nullable: true)]
     private $updatedAt;
 
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private $yearExperienceDate;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -309,6 +312,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getYearExperienceDate(): ?\DateTimeInterface
+    {
+        return $this->yearExperienceDate;
+    }
+
+    public function setYearExperienceDate(?\DateTimeInterface $yearExperienceDate): self
+    {
+        $this->yearExperienceDate = $yearExperienceDate;
 
         return $this;
     }
