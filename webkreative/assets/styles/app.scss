@@ -710,6 +710,7 @@ main {
           .portefolio-card-tag {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
 
             .portefolio-tag {
               width: auto;
@@ -733,8 +734,6 @@ main {
                 font-style: italic;
               }
             }
-
-
           }
         }
       }
