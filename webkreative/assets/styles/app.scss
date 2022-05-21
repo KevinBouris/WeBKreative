@@ -1,5 +1,5 @@
-// @import "custom";
-// @import "~bootstrap/scss/bootstrap";
+@import "tags";
+
 // TODO FAIRE RESPONSIVE TABLETTE
 // ---- KRUB Extralight (200) ----
 @font-face {
@@ -56,9 +56,10 @@
 
 $h1TitleSize: 3rem;
 $h2TitleSize: 2rem;
+$h4TitleSize: 1rem;
 $hLetterSpacing: 5px;
 $textSize : 1rem;
-$textLetterSpacing: 3px;
+$textLetterSpacing: 2px;
 $blueColor: #35C7B7;
 $lineHeight: 1.7em;
 $linerGradient: linear-gradient(to left top, #000000, #060406, #09090e, #090e13, #071316, #071719, #081b1b, #0a1f1c, #082420, #062924, #032f28, #00342c);
@@ -68,10 +69,13 @@ $h2Color: #FFDB98;
 body {
   margin: 0;
   font-family: 'Krub', sans-serif;
+  font-size: .8rem;
   font-weight: 200;
   color: white;
   overflow-x: hidden;
   letter-spacing: $textLetterSpacing;
+  line-height: $lineHeight;
+  box-sizing: border-box;
 }
 
 h3 {
@@ -106,18 +110,27 @@ h3 {
   }
 }
 
+h4 {
+  font-size: $h4TitleSize;
+}
 
+#page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
 
 /* ---- BEGIN Btn component ---- */
 #btn {
   margin-top: 2em;
+  margin-bottom: 2em;
   border: 1px solid $blueColor;
   border-radius: 5px;
   padding: 1rem 3rem;
   color: white;
   position: relative;
   overflow: hidden;
-  font-size: $textSize;
   letter-spacing: $textLetterSpacing;
   text-transform: capitalize;
   transition: all 1s;
@@ -145,7 +158,6 @@ h3 {
   
   .more-btn--text{
     text-decoration: none;
-    font-size: $textSize;
     font-weight: 400;
 
   }
@@ -156,12 +168,6 @@ h3 {
 }
 /* ----- END Btn component ---- */
   
-#page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
 
 /* ---- LANDING PAGE CSS --- */
 // IMPORTANT faire affichage tablette
@@ -182,6 +188,7 @@ h3 {
   transform: translateY(-50%);
   width: 200px;
 }
+
 .shape1,
 .shape2 {
   stroke-dasharray: 1120;
@@ -192,12 +199,15 @@ h3 {
   transition-timing-function: linear;
   transition: stroke-dashoffset 4s, stroke-dasharray 4s;
 }
+
 .shape1 {
   stroke-dashoffset: 1120;
 }
+
 .shape2 {
   stroke-dashoffset: -1120;
 }
+
 .text {
   font-size: 22px;
   font-weight: 600;
@@ -280,7 +290,6 @@ header {
   color: $blueColor;
 }
 
-
 .nav-logo {
   transition: .5s;
   margin-left: 1em;
@@ -328,9 +337,11 @@ header {
 .open .bar1 {
   transform: translateY(200%) rotate(-45deg);
 }
+
 .open .bar3 {
   transform: translateY(-200%) rotate(45deg);
 }
+
 .open .bar2 {
   transform: rotate(45deg);
   opacity: 100%;
@@ -338,21 +349,9 @@ header {
 
 /* ---- END HEADER ---- */
 
-/* ---- FOOTER ---- */
-footer {
-  background-color: black;
-  height: 8rem;
-}
-
-/* ---- END FOOTER ---- */
-
 /* ---- MAIN ---- */
 main {
   flex-grow: 1;
-}
-
-section {
-  height: 50vh;
 }
 
 #hero {
@@ -438,7 +437,6 @@ section {
   p {
     margin: 0;
     padding: 1em;
-    font-size: $textSize;
     font-weight: 200;
     letter-spacing: $textLetterSpacing;
   }
@@ -483,9 +481,8 @@ section {
 }
 /* ---- END Carousseul ---- */
 
-  /* ---- BEGIN service section ---- */
+/* ---- BEGIN service ---- */
 #services {
-  // background-color: black;
   width: 100vw;
   height: auto;
 }
@@ -502,11 +499,9 @@ section {
   }
 
   p {
-    font-size: $textSize;
     font-weight: 200;
-    text-align: center;
+    text-align: left;
     padding: 1em;
-    text-shadow: white .5px .5px .7px;
     margin-bottom: 0;
     margin-top: 0;
 
@@ -521,7 +516,7 @@ section {
 .service--glass {
   width: 80vw;
   margin-top: 1em;
-  background-color: rgba (255, 255, 255, .15);
+  background-color: rgba(255, 255, 255, .15);
   backdrop-filter: blur(8px);
   border-radius: 20px;
 }
@@ -543,8 +538,6 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 2em;
-
-    font-size: $textSize;
   }
 
   .service--link {
@@ -562,7 +555,7 @@ section {
     margin-top: 1em;
   }
 }
-  /* ---- END service section ---- */
+/* ---- END service ---- */
 
 /* ---- BEGIN About ---- */
 
@@ -593,7 +586,6 @@ section {
     
     .btn-holder {
       text-align: center;
-      margin-bottom: 1em;
       margin-top: 0;
     }
 
@@ -624,7 +616,6 @@ section {
   }
 }
 
-
 .about > h3::after {
   left: 140px;
   top: 1.15em;
@@ -638,11 +629,131 @@ section {
   align-items: center;
   height: auto;
   padding: 2em;
-
-  line-height: $lineHeight;
-  font-size: $textSize;
-  letter-spacing: $textLetterSpacing;
 }
 
+/* ---- END About ---- */
+
+/* ---- BEGIN Portefolio ---- */
+#portefolio {
+  background: $linerGradient;
+  width: 100vw;
+  height: auto;
+  margin-top: 2em;
+
+  .portefolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3:before {
+      top: -3px;
+      left: -7px;
+    }
+
+    h3::after {
+      left: 198px;
+      bottom: -2px;
+    }
+
+    .portefolio-galery {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: space-between;
+
+      .portefolio-glass {
+        width: 80vw;
+        padding: .5em .5em 0 .5em;
+
+        height: auto;
+        margin-bottom: 2em;
+
+        background-color: rgba(255, 255, 255, .15);
+        backdrop-filter: blur(8px);
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-evenly;
+
+        img {
+          border-radius: 15px 15px 0 0;
+          object-fit: cover;
+        }
+
+        .portefolio-design-row {
+          height: .5px;
+          width: 30%;
+          background-color: $blueColor;
+          align-self: center;
+          margin-top: 1em;
+        }
+
+        .portefolio-card-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          
+          .portefolio-card-text {
+            margin-top: 0;
+            padding: 0 1em 0 1em;
+          }
+
+          h4 {
+            align-self: center;
+            text-transform: capitalize;
+            margin: 1em 0 .5em 0;
+            font-weight: 400;
+            font-style: italic;
+          }
+
+          .portefolio-card-tag {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 1em 1em 1em;
+
+            .portefolio-tag {
+              width: auto;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              border-radius: 25px;
+              margin: .5em .5em .5em 0;
+              padding: .5em;
+
+              .tag-logo {
+                margin-right: .5em;
+              }
+
+              img {
+                width: 15px;
+                margin-right: .5em;
+              }
+
+              & > p {
+                font-size: .5rem;
+                margin: 0 0 0 0;
+                font-weight: 700;
+                font-style: italic;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ---- END Portefolio ---- */
+
+/* ---- FOOTER ---- */
+footer {
+  background-color: black;
+  height: 8rem;
+}
+/* ---- END FOOTER ---- */
 
 /* ---- END MAIN ---- */

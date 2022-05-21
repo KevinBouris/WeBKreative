@@ -1,3 +1,5 @@
+@import "tags";
+
 $h1TitleSize: 6rem;
 $h2TitleSize: 4rem;
 $h3TitleSize: 2.5rem;
@@ -134,14 +136,9 @@ $blueColor: #35c7b7;
             }
         }
     }
-
-    
-
-
 /* ---- END About ---- */
 
-/* ---- BEGIN Service ----*/
-    
+/* ---- BEGIN Service ---- */ 
     .service {
         padding: 2em;
         width: 80%;
@@ -168,12 +165,41 @@ $blueColor: #35c7b7;
         }
         
     }
+/* ---- END Service ---- */
 
+/* ---- BEGIN Portefolio ---- */
+    #portefolio {
+        width: 80%;
+        margin: auto;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        .portefolio {
+            width: 100%;
+            h3::before {
+                top: -7px;
+            }
 
+            h3::after {
+                left: 240px;
+                bottom: -4px;
+            }
 
-/* ---- END Service */
+            .portefolio-galery {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-evenly;
+                margin-top: 2em;
 
-/* ---- Scrollbar CSS ----*/
+                .portefolio-glass {
+                    width: 25%;
+                    padding: .8em .8em 0 .8em;
+                }
+            }
+        }
+    }
+/* ---- END  Portefolio ---- */
+/* ---- Scrollbar CSS ---- */
   /* Firefox */
   * {
         scrollbar-width: thin;

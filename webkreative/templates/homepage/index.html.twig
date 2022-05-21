@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
-
+{% dump(projects) %}
 {% block body %}
     <section id='hero'>
         <div class="caroussel">
@@ -46,18 +46,21 @@
             <div class="service--glass">
                 <ul class="service-list">
                     <li>
+                    {# TODO ajouter la route pour le lien #}
                         <a class="service--link" href="">
                             <i class="fi fi-rs-paint-brush"></i>
                             <p>design</p>
                         </a>
                     </li>
                     <li>
+                    {# TODO ajouter la route pour le lien #}
                         <a class="service--link" href="">
                             <i class="fi fi-rs-computer"></i>
                             <p>conception</p>
                         </a>
                     </li>
                     <li>
+                    {# TODO ajouter la route pour le lien #}
                         <a class="service--link" href="">
                             <i class="fi fi-rs-users"></i>
                             <p>accompagnement</p>
@@ -65,11 +68,45 @@
                     </li>
                 </ul>
             </div>
+            {# TODO ajouter la route pour le lien #}
             <div class="btn-holder" id="btn">
                 <a href="" class="more-btn--text">en savoir plus</a>
             </div>
         </div>
     </section>
-    <section id='portefolio'></section>
+    <section id='portefolio'>
+        <div class="portefolio">
+            <h3>mes projets</h3>
+            <div class="portefolio-galery">
+                {% for project in projects %}
+                    <div class="portefolio-glass">
+                        <img src="{{ asset('assets/img/project/' ~ project.imagePath) }}" alt="webkreative landing page screenshot">
+                        <div class="portefolio-design-row"></div>
+                        <div class="portefolio-card-info">
+                            <h4>{{ project.name }}</h4>
+                            <p class="portefolio-card-text">{{ project.shortDescription }}</p>
+                            <div class="portefolio-card-tag">
+                                {% for language in project.languages %}
+                                    <div class="portefolio-tag {{ language.cssClass }}">
+                                        <img src="{{ asset('assets/img/logo/' ~ language.logoPath) }}" alt="Logo {{ language.name }}" class="">    
+                                        <p>{{ language.name }}</p>
+                                    </div>
+                                {% endfor %}
+                                {% for tag in project.tags %}
+                                    <div class="portefolio-tag {{ tag.cssClass }}">
+                                        <p><i class="{{ tag.logoClass }} tag-logo"></i>{{ tag.name }}</p>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {# TODO ajouter la route pour le lien #}
+            <div class="btn-holder" id="btn">
+                <a href="" class="more-btn--text">en savoir plus</a>
+            </div>
+        </div>
+    </section>
     <section id='tarifs'></section>
 {% endblock %}

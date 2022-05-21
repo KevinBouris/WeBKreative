@@ -1,0 +1,42 @@
+$green: #00FF80;
+$flashyGreen: #00FF40;
+$corail: #E9967A;
+$velvetViolet: #800080;
+$pacificPink: #DB7093;
+$harborBlue: #00656f;
+$poppySeed: #626367;
+
+/* ---- BEGIN Language specific---- */
+
+.symfony {
+    background-color: black;
+    color: white;
+}
+
+.javascript {
+    background-color: #F7DF1E;
+    color: black;
+}
+
+.wordpress {
+    background-color: $harborBlue;
+}
+
+  /* ---- END Language specific ---- */
+
+/* ---- Begin Tag specific ---- */
+.build {
+    background-color: $flashyGreen;
+    color: black;
+}
+.maintenance {
+    background-color: $corail;
+    color: black;
+}
+.webdesign {
+    background-color: $pacificPink;
+}
+.design {
+    background-color: $velvetViolet;
+}
+/* ---- END Tag specific ---- */
