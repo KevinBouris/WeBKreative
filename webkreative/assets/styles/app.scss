@@ -711,6 +711,7 @@ main {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
+            padding: 0 1em 1em 1em;
 
             .portefolio-tag {
               width: auto;
@@ -722,9 +723,13 @@ main {
               margin: .5em .5em .5em 0;
               padding: .5em;
 
+              .tag-logo {
+                margin-right: .5em;
+              }
+
               img {
                 width: 15px;
-                margin-right: 5px;
+                margin-right: .5em;
               }
 
               & > p {

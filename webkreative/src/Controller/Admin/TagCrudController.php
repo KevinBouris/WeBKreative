@@ -22,6 +22,7 @@ class TagCrudController extends AbstractCrudController
             IdField::new('id')->onlyOnIndex(),
             TextField::new('name', 'Title'),
             TextField::new('css_class')->onlyOnForms(),
+            TextField::new('logo_class')->onlyOnForms(),
             DateTimeField::new('created_at')->onlyOnIndex(),
             DateTimeField::new('updated_at')->onlyOnIndex(),
             AssociationField::new('projects')

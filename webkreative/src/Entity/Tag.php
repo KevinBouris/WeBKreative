@@ -32,6 +32,9 @@ class Tag
     #[ORM\Column(type: 'datetime', nullable: true)]
     private $updatedAt;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $logoClass;
+
     public function __construct()
     {
         $this->projects = new ArrayCollection();
@@ -125,6 +128,18 @@ class Tag
     public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getLogoClass(): ?string
+    {
+        return $this->logoClass;
+    }
+
+    public function setLogoClass(?string $logoClass): self
+    {
+        $this->logoClass = $logoClass;
 
         return $this;
     }

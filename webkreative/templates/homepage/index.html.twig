@@ -94,7 +94,7 @@
                                 {% endfor %}
                                 {% for tag in project.tags %}
                                     <div class="portefolio-tag {{ tag.cssClass }}">
-                                        <p>{{ tag.name }}</p>
+                                        <p><i class="{{ tag.logoClass }} tag-logo"></i>{{ tag.name }}</p>
                                     </div>
                                 {% endfor %}
                             </div>
