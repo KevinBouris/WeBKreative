@@ -101,6 +101,9 @@ $blueColor: #35c7b7;
 /* ---- END Caroussel Desktop ---- */
 
 /* ---- BEGIN About ---- */
+    #about {
+        margin-top: 4em;
+    }
     .about {
         width: 80%;
         font-size: $textSize;
@@ -140,6 +143,9 @@ $blueColor: #35c7b7;
 /* ---- END About ---- */
 
 /* ---- BEGIN Service ---- */ 
+    #service {
+        margin-top: 4em;
+    }
     .service {
         padding: 2em;
         width: 80%;
@@ -168,6 +174,10 @@ $blueColor: #35c7b7;
         .service-list {
             flex-direction: row;
             justify-content: space-evenly;
+            
+            li {
+                margin-top: 0;
+            }
         }
         
     }
@@ -176,7 +186,7 @@ $blueColor: #35c7b7;
 /* ---- BEGIN Portefolio ---- */
     #portefolio {
         width: 80%;
-        margin: auto;
+        margin: 4em auto 0 auto;
         border-radius: 15px;
         display: flex;
         justify-content: center;
@@ -205,6 +215,37 @@ $blueColor: #35c7b7;
         }
     }
 /* ---- END  Portefolio ---- */
+
+/* ---- BEGIN Contact ---- */
+#contact {
+    h3::before {
+        top: -4px;
+        left: -10px;
+    }
+    
+    h3::after {
+        left: 145px;
+        bottom: -4px;
+    }
+
+    margin-bottom: 4em;
+    margin-top: 4em;
+    .contact {
+        display: flex;
+        flex-direction: row;
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            margin-right: 3em;
+            font-size: $textSize;
+        }
+    }
+}
+/* ---- END Contact ---- */
+
 /* ---- Scrollbar CSS ---- */
   /* Firefox */
   * {

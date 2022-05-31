@@ -748,6 +748,21 @@ main {
 
 /* ---- BEGIN Contact ---- */
 #contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3::before {
+    top: -3px;
+    left: -10px;
+  
+  }
+
+  h3::after {
+    left: 118px;
+    bottom: -2px;
+  }
+
   .contact {
     display: flex;
     flex-direction: column;
@@ -756,16 +771,7 @@ main {
 
     padding: 1em;
 
-    h3::before {
-        top: -3px;
-        left: -10px;
-      
-    }
 
-    h3::after {
-      left: 118px;
-      bottom: -2px;
-    }
 
     .contact-title {
       strong {
