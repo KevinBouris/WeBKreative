@@ -744,9 +744,44 @@ main {
     }
   }
 }
-
-
 /* ---- END Portefolio ---- */
+
+/* ---- BEGIN Contact ---- */
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3::before {
+    top: -3px;
+    left: -10px;
+  
+  }
+
+  h3::after {
+    left: 118px;
+    bottom: -2px;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 1em;
+
+
+
+    .contact-title {
+      strong {
+        font-weight: 400;
+        color: $blueColor;
+      }
+    }
+  }
+}
+/* ---- END Contact ---- */
 
 /* ---- FOOTER ---- */
 footer {
