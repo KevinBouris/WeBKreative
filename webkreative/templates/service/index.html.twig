@@ -1,20 +1,89 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ServiceController!{% endblock %}
+{% block title %}Mes Services{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/WeBKreative/webkreative/src/Controller/ServiceController.php'|file_link(0) }}">src/Controller/ServiceController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/WeBKreative/webkreative/templates/service/index.html.twig'|file_link(0) }}">templates/service/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <section id="services-page">
+        <h2 class="page-title">mes services</h2>
+        <ul class="service-list">
+            <li>
+                <div class="service--glass service--link">
+                    <i class="fi fi-rs-paint-brush"></i>
+                    <p class="services-page-card--subtitle">design</p>
+                    <p class="services-page-card--text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ex qui a quis quos perferendis voluptatem quasi aspernatur sunt saepe repellat facilis iure minus temporibus rem, corporis eos ipsa accusamus.</p>
+                </div>
+            </li>
+            <li>
+                <div class="service--glass service--link">
+                    <i class="fi fi-rs-computer"></i>
+                    <p class="services-page-card--subtitle">conception</p>
+                    <p class="services-page-card--text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi in quas optio eum cupiditate sit vero harum? Tempore nam doloremque, quam nisi vitae quibusdam excepturi, non vel officia, vero asperiores?</p>
+                </div>
+            </li>
+            <li>
+                <div class="service--glass service--link">
+                    <i class="fi fi-rs-users"></i>
+                    <p class="services-page-card--subtitle">accompagnement</p>
+                    <p class="services-page-card--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto blanditiis accusantium culpa qui reprehenderit expedita impedit adipisci atque sapiente. Fugiat ipsam repellendus nam neque aliquid quaerat modi error incidunt praesentium.</p>
+                </div>
+            </li>    
+        </ul>
+    </section>
+    <section id="service-design">
+        <div class="service-design--container">
+            <div>
+                {# TODO Ajouter du contexte (image, mise en avant,...) #}
+            </div>
+            <div class="service-design--content">
+                <h2>L'interface <span>(UI)</span> et l'expérience utilisateur <span>(UX)</span> aux services d'un même objectif</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae esse distinctio harum sit. Corporis fugiat voluptatem quos optio itaque perspiciatis minima tenetur accusamus in enim facere porro, voluptatibus vitae mollitia dolorum eligendi voluptas quibusdam possimus fuga dolor neque explicabo. Vel placeat commodi quae laboriosam sint ea suscipit similique obcaecati quos.
+                </p>
+            </div>
+            <div class="btn-holder" id="btn">
+                {# TODO insére path vers Design Controller #}
+                <a href="#" class="more-btn--text">en savoir plus</a>
+            </div>
+        </div>
+    </section>
+    <section id="service-conception">
+        <div class="service-conception--container">
+            <div>
+                {# TODO Ajouter du contexte (image, mise en avant,...) #}
+            </div>
+            <div class="service-conception--content">
+                <h2>La conception, révèle le coeur de votre métier</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium eveniet ex odit beatae voluptatem quaerat veniam corrupti aliquid iste neque. Dolores doloribus magnam porro dignissimos nesciunt temporibus cumque laudantium. Natus error nulla, quidem molestiae hic obcaecati corporis ipsam assumenda. Recusandae quae error id vel beatae omnis facilis, voluptatibus architecto odit.</p>
+            </div>
+            <div class="btn-holder" id="btn">
+                {# TODO insére path vers Conception Controller #}
+                <a href="#" class="more-btn--text">en savoir plus</a>
+            </div>
+        </div>
+    </section>
+    <section id="service-accompagnement">
+        <div class="service-accompagnement--container">
+            <div>
+                {# TODO Ajouter du contexte (image, mise en avant,...) #}
+            </div>
+            <div class="service-accompagnement--content">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium eveniet ex odit beatae voluptatem quaerat veniam corrupti aliquid iste neque. Dolores doloribus magnam porro dignissimos nesciunt temporibus cumque laudantium. Natus error nulla, quidem molestiae hic obcaecati corporis ipsam assumenda. Recusandae quae error id vel beatae omnis facilis, voluptatibus architecto odit.</p>
+            </div>
+            <div class="btn-holder" id="btn">
+                {# TODO insére path vers Accompagement Controller #}
+                <a href="#" class="more-btn--text">en savoir plus</a>
+            </div>
+        </div>
+    </section>
+    <section id='contact'>
+        <div class="contact">
+            <div class="contact-text">
+                <p class="contact-title">Vous avez un projet de <strong>site web</strong> ? Besoin d'assistance sur un <strong>site existant</strong> ? Ou vous souhaitez simplement discuter ?</p>
+                <p class="contact-subtitle">N'hésitez pas à me contacter, je suis à votre disposition pour de plus ample informations</p>
+            </div>
+            <div class="btn-holder" id="btn">
+                <a href="" class="more-btn--text">contacter <span>webkreative</span></a>
+            </div>  
+        </div>
+    </section>
 {% endblock %}

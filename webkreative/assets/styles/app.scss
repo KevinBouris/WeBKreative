@@ -1,4 +1,5 @@
 @import "tags";
+@import "services-page";
 
 // TODO FAIRE RESPONSIVE TABLETTE
 // ---- KRUB Extralight (200) ----
@@ -78,6 +79,38 @@ body {
   box-sizing: border-box;
 }
 
+.page-title {
+  font-size: $h2TitleSize;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $h2Color;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: $hLetterSpacing;
+
+  &::before {
+    background-color: $blueColor;
+    position: absolute;
+    content:'';
+    display: block;
+    height: 3px;
+    width: 50px;
+    top: -8px;
+    left: -17px;
+  }
+
+  &::after {
+    background-color: $blueColor;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    left: 245px;
+    bottom: -8px;
+  }
+}
+
 h3 {
   font-size: $h2TitleSize;
   font-weight: 400;
@@ -119,6 +152,11 @@ h4 {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+}
+
+.current-link {
+  border-bottom: 1px $blueColor dotted;
+  padding-bottom: .5em;
 }
 
 /* ---- BEGIN Btn component ---- */
@@ -410,7 +448,6 @@ main {
   50% { transform: translateY(0%); }
   100% { opacity: 0; }
 }
-
 
 .slide1,
 .slide2,

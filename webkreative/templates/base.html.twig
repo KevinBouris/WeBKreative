@@ -54,6 +54,7 @@
         {% endblock %}
     </head>
     <body id="ventajs-background">
+    {% dump(app.request.attributes.get('_route')) %}
         <div id="page">
             {% if app.request.attributes.get('_route') != 'landing_page' %}
             <header>
@@ -63,10 +64,10 @@
                     </a> 
                     <ul class="nav-list" id="nav_list">
                         <li class="nav-list-border">
-                            <a class="nav-link" aria-current="page" href="">About</a>
+                            <a class="nav-link" href="{{ path('homepage') }}#about">About</a>
                         </li>
                         <li class="nav-list-border">
-                            <a class="nav-link" href="#">Services</a>
+                            <a class="nav-link {{ (app.request.attributes.get('_route') == 'service') ? 'current-link' : '' }}" href="{{ path('service') }}">Mes Services</a>
                         </li>
                         <li class="nav-list-border">
                             <a class="nav-link" href="#">Portofolio</a>

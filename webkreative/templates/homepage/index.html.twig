@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
-{% dump(projects) %}
+
 {% block body %}
     <section id='hero'>
         <div class="caroussel">
@@ -70,7 +70,7 @@
             </div>
             {# TODO ajouter la route pour le lien #}
             <div class="btn-holder" id="btn">
-                <a href="" class="more-btn--text">en savoir plus</a>
+                <a href="{{ path('service') }}" class="more-btn--text">en savoir plus</a>
             </div>
         </div>
     </section>
